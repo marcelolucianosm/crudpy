@@ -1,0 +1,7 @@
+<!-- crud_app/templates/crud_app/item_confirm_delete.html -->
+<h1>Are you sure you want to delete "{{ item.name }}"?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+</form>
+<a href="{% url 'list_items' %}">Cancel</a>

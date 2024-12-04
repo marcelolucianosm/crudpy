@@ -1,0 +1,14 @@
+<!-- crud_app/templates/crud_app/item_list.html -->
+<h1>Items</h1>
+<ul>
+    {% for item in items %}
+        <li>
+            <a href="{% url 'view_item' item.pk %}">{{ item.name }}[ ____________ ]{{ item.description }}</a>
+            <a href="">[ ____________ ]</a>
+            <a href="{% url 'update_item' item.pk %}">Edit</a> |
+            <a href="{% url 'delete_item' item.pk %}">Delete</a>
+        </li>
+        <br>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_item' %}">Create new item</a>
